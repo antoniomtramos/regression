@@ -7887,9 +7887,6 @@ which leads to the so called normal equations. Solving it for $\mathbf{\beta}$ r
 <span class="o">%</span><span class="k">matplotlib</span> inline
 </pre></div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 </div>
 </div>
@@ -8017,17 +8014,14 @@ The last term can be rewrite to as zero weighted</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">dictTicker</span><span class="p">)</span>
-</pre></div>
-</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>df = df.rename(columns=dictTicker)</p>
 </div>
 </div>
 </div>
@@ -8399,10 +8393,8 @@ The last term can be rewrite to as zero weighted</p>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">dfRetY</span> <span class="o">=</span> <span class="p">(</span><span class="n">dfRetX</span><span class="o">*</span><span class="n">dfWtg</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">dfCumRetY</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.0</span><span class="o">+</span><span class="n">dfRetY</span><span class="p">)</span><span class="o">.</span><span class="n">cumprod</span><span class="p">()</span>
-<span class="n">dfCumRetY</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">dfCumRetY</span><span class="p">,</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'PORTFOLIO'</span><span class="p">])</span>
-<span class="n">dfCumRetY</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">dfWtg</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">dfRetX</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="p">[[</span><span class="mf">0.20</span><span class="p">,</span><span class="mf">0.05</span><span class="p">,</span><span class="mf">0.60</span><span class="p">,</span><span class="mf">0.15</span><span class="p">]],</span><span class="n">columns</span> <span class="o">=</span> <span class="n">dfRetX</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="n">dfRetX</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+<span class="n">dfWtg</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -8496,6 +8488,17 @@ The last term can be rewrite to as zero weighted</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Portfolio-cummulative-return">Portfolio cummulative return<a class="anchor-link" href="#Portfolio-cummulative-return">¶</a></h3>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="Assets-cummulative-return">Assets cummulative return<a class="anchor-link" href="#Assets-cummulative-return">¶</a></h3>
 </div>
 </div>
@@ -8508,8 +8511,10 @@ The last term can be rewrite to as zero weighted</p>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">dfCumRetX</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">+</span> <span class="n">dfRetX</span><span class="p">)</span><span class="o">.</span><span class="n">cumprod</span><span class="p">()</span>
-<span class="n">dfCumRetX</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">dfRetY</span> <span class="o">=</span> <span class="p">(</span><span class="n">dfRetX</span><span class="o">*</span><span class="n">dfWtg</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">dfCumRetY</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.0</span><span class="o">+</span><span class="n">dfRetY</span><span class="p">)</span><span class="o">.</span><span class="n">cumprod</span><span class="p">()</span>
+<span class="n">dfCumRetY</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">dfCumRetY</span><span class="p">,</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'PORTFOLIO'</span><span class="p">])</span>
+<span class="n">dfCumRetY</span>
 </pre></div>
 </div>
 </div>
@@ -8585,9 +8590,6 @@ The last term can be rewrite to as zero weighted</p>
 <tr>
 <th>...</th>
 <td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
 </tr>
 <tr>
 <th>2026-10-26</th>
@@ -8640,7 +8642,7 @@ The last term can be rewrite to as zero weighted</p>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">dfCumRetX</span><span class="p">,</span><span class="n">dfCumRetY</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">logy</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">### Assets cummulative return</span>
 </pre></div>
 </div>
 </div>
