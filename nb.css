@@ -1,0 +1,17 @@
+body.jp-Notebook, body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #111;
+  background: #fdfdfd;
+}
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 30px;
+  box-sizing: border-box;
+}
+.jp-RenderedHTMLCommon { font-size: 16px; line-height: 1.6; }
+.jp-RenderedHTMLCommon h1, h2, h3 { font-weight: 400; margin-top: 1.5em; }
+.jp-OutputArea-output, .jp-RenderedImage img { max-width: 100%; }
+.jp-OutputArea-output { overflow-x: auto; }   /* tabelas largas rolam em vez de estourar */
